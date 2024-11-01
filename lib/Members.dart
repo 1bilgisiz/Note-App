@@ -11,79 +11,104 @@ class MembersPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Üye Ol"),
+        title: const Text(
+          "Üye Olma Sayfası",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text(
-                  "Hesap Oluştur",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                const Center(
+                  child: Text(
+                    "Hesap Oluşturalım",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepPurple,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 30),
-
-                // Username field
                 TextField(
                   controller: usernameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Kullanıcı Adı',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: 'Kullanıcı Adınız',
+                    labelStyle: const TextStyle(color: Colors.deepPurple),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    prefixIcon:
+                        const Icon(Icons.person, color: Colors.deepPurple),
                   ),
                 ),
                 const SizedBox(height: 16),
-
-                // Email field
                 TextField(
                   controller: emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'E-posta',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: 'E-postanız',
+                    labelStyle: const TextStyle(color: Colors.deepPurple),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    prefixIcon:
+                        const Icon(Icons.email, color: Colors.deepPurple),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 16),
-
-                // Password field
                 TextField(
                   controller: passwordController,
-                  decoration: const InputDecoration(
-                    labelText: 'Şifre',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: 'Şifreniz',
+                    labelStyle: const TextStyle(color: Colors.deepPurple),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    prefixIcon:
+                        const Icon(Icons.lock, color: Colors.deepPurple),
                   ),
                   obscureText: true,
                 ),
                 const SizedBox(height: 30),
-
-                // Register button
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.deepPurple,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 100,
+                        horizontal: 135,
                         vertical: 15,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.circular(30),
                       ),
                     ),
                     onPressed: () {
                       String username = usernameController.text.trim();
                       String email = emailController.text.trim();
                       String password = passwordController.text.trim();
-
-                      // Üye olma işlemleri burada yapılabilir
                       if (username.isNotEmpty &&
                           email.isNotEmpty &&
                           password.isNotEmpty) {
@@ -100,7 +125,7 @@ class MembersPage extends StatelessWidget {
                     },
                     child: const Text(
                       'Üye Ol',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle(fontSize: 23, color: Colors.white),
                     ),
                   ),
                 ),

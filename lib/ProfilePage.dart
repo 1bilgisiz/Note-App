@@ -9,7 +9,7 @@ class Profilepage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Profil Sayfası'),
         centerTitle: true,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.deepPurple ,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

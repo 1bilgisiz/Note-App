@@ -21,6 +21,8 @@ class LoginPage extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage("assets/images/gif1.gif"),
                 fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(Colors.black45,
+                    BlendMode.darken), // Add overlay to improve contrast
               ),
             ),
           ),
@@ -40,26 +42,32 @@ class LoginPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     TextField(
                       controller: emailController,
                       decoration: InputDecoration(
                         labelText: 'E-posta',
                         labelStyle: const TextStyle(
-                          color: Colors.deepPurple,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 22,
+                          fontSize: 20,
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.pinkAccent),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: const OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.8),
+                        fillColor: Colors.white.withOpacity(0.2),
+                        prefixIcon:
+                            const Icon(Icons.email, color: Colors.white),
                       ),
                       keyboardType: TextInputType.emailAddress,
                       style: const TextStyle(
-                        color: Colors.deepPurple,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -69,38 +77,43 @@ class LoginPage extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: 'Şifre',
                         labelStyle: const TextStyle(
-                          color: Colors.deepPurple,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 22,
+                          fontSize: 20,
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.deepPurple),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        border: const OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.8),
+                        fillColor: Colors.white.withOpacity(0.2),
+                        prefixIcon: const Icon(Icons.lock, color: Colors.white),
                       ),
                       obscureText: true,
                       style: const TextStyle(
-                        color: Colors.deepPurple,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.deepPurple,
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 125,
-                          vertical: 10,
+                          horizontal: 120,
+                          vertical: 15,
                         ),
                         textStyle: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                       ),
                       onPressed: () {
@@ -144,9 +157,10 @@ class LoginPage extends StatelessWidget {
                       child: const Text(
                         'Hesabınız yok mu? Kayıt Ol.',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
+                          decoration: TextDecoration.underline,
                         ),
                       ),
                     ),
