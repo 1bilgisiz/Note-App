@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hash_code_app/MessagePage.dart';
-import 'package:hash_code_app/ProfilePage.dart';
-import 'package:hash_code_app/Settings.dart';
+import 'package:hash_code_app/DrawerMenu.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -17,12 +15,12 @@ class Homepage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.deepPurpleAccent,
       ),
+      drawer: const DrawermenuPage(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Welcome banner
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20.0),
@@ -40,47 +38,6 @@ class Homepage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-
-            // Button Section
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildIconButton(
-                  icon: Icons.person,
-                  label: "Profil",
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Profilepage()));
-                  },
-                ),
-                _buildIconButton(
-                  icon: Icons.message,
-                  label: "Mesajlar",
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MessagePage()));
-                  },
-                ),
-                _buildIconButton(
-                  icon: Icons.settings,
-                  label: "Ayarlar",
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SettingsPage()));
-                  },
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 40),
-
-            // Info Cards Section using Flexible
             Expanded(
               child: ListView(
                 children: [
@@ -117,35 +74,6 @@ class Homepage extends StatelessWidget {
     );
   }
 
-  // Custom Icon Button
-  Widget _buildIconButton(
-      {required IconData icon,
-      required String label,
-      required VoidCallback onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.deepPurpleAccent,
-            child: Icon(
-              icon,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            label,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // Custom Info Card with Flexible height
   Widget _buildInfoCard(
       {required String title,
       required String content,

@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 45,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       keyboardType: TextInputType.emailAddress,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.deepPurple,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -82,7 +82,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       obscureText: true,
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.deepPurple,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -142,11 +142,11 @@ class LoginPage extends StatelessWidget {
                         );
                       },
                       child: const Text(
-                        'Hesabınız yok mu? Kayıt Olun!',
+                        'Hesabınız yok mu? Kayıt Ol.',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey,
+                          color: Colors.white,
                         ),
                       ),
                     ),
