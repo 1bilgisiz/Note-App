@@ -11,20 +11,15 @@ class LoginPage extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Uygulamaya Giriş",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blueGrey),
-        ),
-        centerTitle: true,
-      ),
       body: Stack(
         children: [
           // Background image
           Container(
+            width: double.infinity,
+            height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/foto1.png"),
+                image: AssetImage("assets/images/gif1.gif"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -38,51 +33,75 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Feratlar, Küpekler ve Sibel Doğan GİREMEZ !',
+                      'Hoşgeldiniz!',
                       style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     TextField(
                       controller: emailController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         labelText: 'E-posta',
-                        labelStyle: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22),
-                        border: OutlineInputBorder(),
+                        labelStyle: const TextStyle(
+                          color: Colors.deepPurple,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.pinkAccent),
+                        ),
+                        border: const OutlineInputBorder(),
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.8),
                       ),
                       keyboardType: TextInputType.emailAddress,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     TextField(
                       controller: passwordController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         labelText: 'Şifre',
-                        labelStyle: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22),
-                        border: OutlineInputBorder(),
+                        labelStyle: const TextStyle(
+                          color: Colors.deepPurple,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepPurple),
+                        ),
+                        border: const OutlineInputBorder(),
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.8),
                       ),
                       obscureText: true,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.grey.shade400,
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.deepPurple,
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 125, vertical: 10),
+                          horizontal: 125,
+                          vertical: 10,
+                        ),
                         textStyle: const TextStyle(
-                          fontSize: 15,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50)),
+                          borderRadius: BorderRadius.circular(100),
+                        ),
                       ),
                       onPressed: () {
                         String email = emailController.text.trim();
@@ -93,38 +112,42 @@ class LoginPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Homepage()),
+                              builder: (context) => const Homepage(),
+                            ),
                           );
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                                content: Text('Hatalı e-posta veya şifre!')),
+                              content: Text('Hatalı e-posta veya şifre!'),
+                            ),
                           );
                         }
                       },
                       child: const Text(
                         'Giriş Yap',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Colors.deepPurpleAccent),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 50),
                     TextButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const MembersPage()),
+                            builder: (context) => const MembersPage(),
+                          ),
                         );
                       },
                       child: const Text(
                         'Hesabınız yok mu? Kayıt Olun!',
                         style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueGrey),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
                   ],

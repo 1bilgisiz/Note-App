@@ -13,7 +13,7 @@ class MembersPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Üye Ol"),
         centerTitle: true,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -28,7 +28,7 @@ class MembersPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.deepPurple,
                   ),
                 ),
                 const SizedBox(height: 30),
@@ -69,7 +69,7 @@ class MembersPage extends StatelessWidget {
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: Colors.deepPurple,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 100,
                         vertical: 15,
